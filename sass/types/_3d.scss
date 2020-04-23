@@ -1,0 +1,41 @@
+@if index($hamburger-types, 3d) {
+
+  .hamburger--3d {
+    perspective: $hamburger-layer-width * 2;
+
+    .hamburger-inner {
+      transition: .5s;
+    }
+
+    .line-top,
+    .line-center,
+    .line-bottom {
+      transition: .5s;
+    }
+
+    &.is-active {
+
+      .hamburger-inner {
+        transform: rotate3d(1, 1, 0, 360deg);
+        transition: .5s;
+      }
+
+      .line-top {
+        top: $center-position;
+        transform: rotate(45deg);
+        transition: .5s;
+      }
+
+      .line-center {
+        opacity: 0;
+        transition: .5s;
+      }
+
+      .line-bottom {
+        bottom: $center-position;
+        transform: rotate(-45deg);
+        transition: .5s;
+      }
+    }
+  }
+}

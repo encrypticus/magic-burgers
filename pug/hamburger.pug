@@ -1,0 +1,17 @@
+mixin hamburger(effect = 'simple')
+  -
+    let effectType = '';
+    if (typeof effect !== 'undefined' && effect)
+      effectType += `hamburger--${effect}`;
+
+  button.hamburger(class=effectType)&attributes(attributes)
+    span.hamburger-inner
+      span.line-top
+        span.line-top-left
+        span.line-top-right
+      span.line-center
+        span.line-center-left
+        span.line-center-right
+      span.line-bottom
+        span.line-bottom-left
+        span.line-bottom-right

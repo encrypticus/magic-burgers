@@ -1,0 +1,47 @@
+$hamburger-layer-width: 40px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-padding: 10px !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-layer-color: #000 !default;
+$center-position: calc(50% - #{$hamburger-layer-height} / 2);
+
+@import 'base';
+
+$hamburger-types: (
+  simple,
+  collapse,
+  storm,
+  juggler,
+  shurikens,
+  shurikens-r,
+  shurikens-alt,
+  shurikens-alt-r,
+  minify,
+  arrowturn,
+  arrowturn-r,
+  arrowdown,
+  arrowdown-r,
+  magic,
+  3d,
+  alchemy,
+  alchemy-r
+) !default;
+
+@import 'types/simple';
+@import 'types/collapse';
+@import 'types/storm';
+@import 'types/juggler';
+@import 'types/shurikens';
+@import 'types/shurikens-r';
+@import 'types/shurikens-alt';
+@import 'types/shurikens-alt-r';
+@import 'types/minify';
+@import 'types/arrowturn';
+@import 'types/arrowturn-r';
+@import 'types/arrowdown';
+@import 'types/arrowdown-r';
+@import 'types/magic';
+@import 'types/3d';
+@import 'types/alchemy';
+@import 'types/alchemy-r';

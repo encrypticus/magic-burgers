@@ -1,0 +1,37 @@
+@if index($hamburger-types, collapse) {
+
+  .hamburger--collapse {
+
+    .line-top {
+      transition: top .2s .2s cubic-bezier(0.680, -0.550, 0.265, 1.550), transform .2s;
+    }
+
+    .line-center {
+      transition: opacity .2s .2s;
+    }
+
+    .line-bottom {
+      transition: bottom .2s .2s cubic-bezier(0.680, -0.550, 0.265, 1.550), transform .2s;
+    }
+
+    &.is-active {
+
+      .line-top {
+        top: $center-position;
+        transform: rotate(45deg);
+        transition: top .2s, transform .2s .2s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      }
+
+      .line-center {
+        opacity: 0;
+        transition: opacity .2s;
+      }
+
+      .line-bottom {
+        bottom: $center-position;
+        transform: rotate(-45deg);
+        transition: bottom .2s, transform .2s .2s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      }
+    }
+  }
+}

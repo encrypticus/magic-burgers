@@ -1,0 +1,26 @@
+@if index($hamburger-types, arrowturn-r) {
+
+  .hamburger--arrowturn-r {
+
+    .hamburger-inner,
+    .line-top,
+    .line-bottom {
+      transition: .2s;
+    }
+
+    &.is-active {
+
+      .hamburger-inner {
+        transform: rotate(180deg);
+      }
+
+      .line-top {
+        transform: translateX(-8px) rotate(-45deg) scaleX(.7);
+      }
+
+      .line-bottom {
+        transform: translate3d(-8px, 0, 0) rotate(45deg) scaleX(.7);
+      }
+    }
+  }
+}

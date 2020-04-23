@@ -1,0 +1,49 @@
+@if index($hamburger-types, storm) {
+
+  .hamburger--storm {
+    perspective: $hamburger-layer-width * 3;
+
+    .hamburger-inner {
+      transform: rotateY(0deg);
+      transition: transform .5s .2s;
+    }
+
+    .line-top {
+      transition: top .5s .2s, transform .2s;
+    }
+
+    .line-center {
+      transition: opacity .2s .2s;
+    }
+
+    .line-bottom {
+      transition: bottom .5s .2s, transform .2s;
+    }
+
+    &.is-active {
+
+      .hamburger-inner {
+        transform: rotateY(360deg);
+        transition: transform .5s;
+      }
+
+      .line-top {
+        top: $center-position;
+        transition: top .5s, transform .2s .5s;
+        transform: rotate(45deg);
+      }
+
+      .line-center {
+        opacity: 0;
+        transition-property: opacity;
+        transition-delay: .5s;
+      }
+
+      .line-bottom {
+        bottom: $center-position;
+        transition: bottom .5s, transform .2s .5s;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

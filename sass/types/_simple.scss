@@ -1,0 +1,22 @@
+@if index($hamburger-types, simple) {
+
+  .hamburger--simple {
+
+    &.is-active {
+
+      .line-top {
+        top: $center-position;
+        transform: rotate(45deg);
+      }
+
+      .line-center {
+        opacity: 0;
+      }
+
+      .line-bottom {
+        bottom: $center-position;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@if index($hamburger-types, magic) {
+
+  .hamburger--magic {
+    perspective: $hamburger-layer-width;
+
+    .line-top {
+      transition: .2s;
+    }
+
+    .line-bottom {
+      transition: .2s;
+    }
+
+    .line-center-left,
+    .line-center-right {
+      transition: transform .4s, top .4s, opacity .4s;
+    }
+
+    &.is-active {
+
+      .line-top {
+        transform: rotate(-495deg);
+        top: $center-position;
+        transition: .4s .5s;
+      }
+
+      .line-bottom {
+        transform: rotate(495deg);
+        bottom: $center-position;
+        transition: .4s .5s;
+      }
+
+      .line-center-left {
+        transform: rotateY(-720deg);
+        top: ($hamburger-layer-height * 2 + $hamburger-layer-spacing * 2) * -1;
+        opacity: 0;
+        transition: .5s;
+      }
+
+      .line-center-right {
+        transform: rotateY(720deg);
+        top: ($hamburger-layer-height * 2 + $hamburger-layer-spacing * 2) * -1;
+        opacity: 0;
+        transition: .5s .15s;
+      }
+    }
+  }
+}

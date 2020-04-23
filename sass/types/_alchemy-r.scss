@@ -1,0 +1,63 @@
+@if index($hamburger-types, alchemy-r) {
+
+  .hamburger--alchemy-r {
+
+    .hamburger-inner,
+    .line-center,
+    .line-top-left,
+    .line-bottom-left,
+    .line-top-right,
+    .line-bottom-right {
+      transition: transform .5s;
+    }
+
+    .line-center-left {
+      transition: left .5s, opacity .5s, transform .5s;
+    }
+
+    .line-center-right {
+      transition: right .5s, opacity .5s, transform .5s;
+    }
+
+    .line-top {
+      transition: top .5s;
+    }
+
+    .line-bottom {
+      transition: bottom .5s;
+    }
+
+    &.is-active {
+
+      .hamburger-inner {
+        transform: rotate(360deg);
+        transition: .5s;
+      }
+
+      .line-top {
+        top: $center-position;
+        transform: rotate(45deg);
+        transition: .5s;
+      }
+
+      .line-center {
+        transform: scaleX(0);
+        transition: .5s;
+      }
+
+      .line-bottom {
+        bottom: $center-position;
+        transform: rotate(-45deg);
+        transition: .5s;
+      }
+
+      .line-top-left,
+      .line-top-right,
+      .line-bottom-left,
+      .line-bottom-right {
+        transform: rotate(360deg);
+        transition: .5s;
+      }
+    }
+  }
+}

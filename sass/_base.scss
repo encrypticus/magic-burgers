@@ -1,0 +1,81 @@
+.hamburger {
+  display: inline-block;
+  padding: $hamburger-padding;
+  margin: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+
+  .hamburger-inner {
+    position: relative;
+    display: inline-block;
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  }
+
+  .line-top,
+  .line-top-left,
+  .line-top-right,
+  .line-center,
+  .line-center-left,
+  .line-center-right,
+  .line-bottom,
+  .line-bottom-left,
+  .line-bottom-right {
+    position: absolute;
+    display: block;
+  }
+
+  .line-top-left,
+  .line-top-right,
+  .line-center-left,
+  .line-center-right,
+  .line-bottom-left,
+  .line-bottom-right {
+    width: 50%;
+    height: 100%;
+    background-color: $hamburger-layer-color;
+  }
+
+  .line-top-left,
+  .line-center-left,
+  .line-bottom-left {
+    top: 0;
+    left: 0;
+    border-radius: $hamburger-layer-border-radius 0 0 $hamburger-layer-border-radius;
+  }
+
+  .line-top-right,
+  .line-center-right,
+  .line-bottom-right {
+    top: 0;
+    right: 0;
+    border-radius: 0 $hamburger-layer-border-radius $hamburger-layer-border-radius 0;
+  }
+
+  .line-top,
+  .line-center,
+  .line-bottom {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: transparent;
+    border-radius: $hamburger-layer-border-radius;
+  }
+
+  .line-top {
+    top: 0;
+    left: 0;
+  }
+
+  .line-center {
+    top: $center-position;
+    left: 0;
+  }
+
+  .line-bottom {
+    bottom: 0;
+    left: 0
+  }
+}
