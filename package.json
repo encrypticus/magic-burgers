@@ -1,0 +1,31 @@
+{
+  "name": "magic-burgers",
+  "version": "1.0.0",
+  "description": "Magic burgers is a small css library of animated hamburger menus. Also includes source sass files. Modular library and customizable, allowing you to cook your own burger!",
+  "main": "dist/hamburger.min.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encrypticus/magic-burgers.git"
+  },
+  "keywords": [
+    "hamburger",
+    "hamburgers",
+    "hamburger",
+    "menu",
+    "mobile",
+    "menu",
+    "sass",
+    "scss",
+    "css",
+    "menu"
+  ],
+  "author": "@encrypticus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/encrypticus/magic-burgers/issues"
+  },
+  "homepage": "https://github.com/encrypticus/magic-burgers#readme"
+}
