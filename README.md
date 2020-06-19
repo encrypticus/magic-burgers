@@ -1,21 +1,17 @@
 # Magic burgers
 
-Magic burgers - это небольшая css-библиотека анимированных гамбургер-меню, вдохновленная [этой](https://github.com/jonsuh/hamburgers) библиотекой.
-Также включает исходные sass-файлы. Библиотека модульная
-и настраиваемая, что позволяет вам приготовить свой собственный гамбургер!
+Magic burgers is a small css library of animated hamburger menus inspired by [this](https://github.com/jonsuh/hamburgers) library. Also includes source sass files. Modular library and customizable, allowing you to cook your own burger!
 
 ![](https://i.imgur.com/583dcP1.gif)
 
-## Использование
+## Usage
 
-1. С помощью команды ```git clone https://github.com/encrypticus/magic-burgers``` клонируйте репозиторий на свой компьютер или загрузите его как zip-архив. Затем в секции `<head>` на странице вашего сайта вставьте следующий код:
-
-  ```html
-  <link href="dist/hamburger.css" rel="stylesheet">
+1. Install
+  ```bash
+  npm i magic-burgers
   ```
-  
-2. Добавьте на страницу следующую разметку:
-  
+2. Add the following markup to the page:
+
   ```html
   <button class="hamburger">
     <span class="hamburger-inner">
@@ -32,9 +28,9 @@ Magic burgers - это небольшая css-библиотека анимир�
         <span class="line-bottom-right"></span>
       </span>
     </span>
-  </button> 
+  </button>
   ```
-3. Добавьте название класса того типа гамбургера, который вам нужен:
+3. Add the class name of the type of hamburger you need:
 
   ```html
   <button class="hamburger hamburger--arrowdown">
@@ -52,9 +48,9 @@ Magic burgers - это небольшая css-библиотека анимир�
         <span class="line-bottom-right"></span>
       </span>
     </span>
-  </button> 
+  </button>
   ```
-  Доступны следующие классы:
+  The following classes are available:
 
   ```
   hamburger--3d
@@ -75,11 +71,10 @@ Magic burgers - это небольшая css-библиотека анимир�
   hamburger--simple
   hamburger--storm
   ```
-  
-  Примечание: -r классы - обратные варианты (например `hamburger--arrowturn` вращает гамбургер против часовой стрелки, в то время как 
-  `hamburger--arrowturn-r` - по часовой)
-  
-4. Чтобы переключить состояние гамбургера, добавьте класс `is-active`:
+
+  Note: -r classes are reverse options ( for example, `hamburger-arrowturn` rotates the hamburger counterclockwise, while` hamburger-arrowturn-r` - clockwise )
+
+4. To switch the state of a hamburger, add the `is-active` class:
 
   ```html
   <button class="hamburger hamburger--arrowdown is-active">
@@ -97,66 +92,64 @@ Magic burgers - это небольшая css-библиотека анимир�
         <span class="line-bottom-right"></span>
       </span>
     </span>
-  </button> 
+  </button>
   ```
-  
-  Поскольку имя класса должно переключаться с помощью JavaScript, в директории `js/hamburger.js` находится файл `hamburger.js`, код в котором
-  предназначен для этого. Просто подключите его на странице вашего сайта перед закрывающим тегом `</body>`, вставив следующий код:
-  
+
+  Since the class name must be switched using JavaScript, in the `js/hamburger.js` directory is the file` hamburger.js`, the code in which designed for that. Just plug it in on your site page before the closing `</body>` tag by pasting the following code:
+
   ```html
-  <script src="js/hamburger.js"></script> 
+  <script src="js/hamburger.js"></script>
   ```
-  
-  Также, если вы используете препроцессор pug, в директории `pug` находится файл `hamburger.pug` с примесью, создающей разметку для гамбургера.
-  Подключив файл с примесью в своем коде, вы можете вызвать ее следующим образом:
-  
+
+  Also, if you use the pug preprocessor, in the `pug` directory is the file` hamburger.pug` with an admixture that creates markup for the hamburger. Having connected the file with an admixture in your code, you can call it as follows:
+
   ```html
   +hamburger("class name")
   ```
-    
-  Где `class name` - это название класса того типа гамбургера, который вам нужен. Например:
-  
+
+  Where the `class name` is the class name of the type of hamburger you need. For instance:
+
   ```html
   +hamburger("3d")
   +hamburger("alchemy")
   +hamburger("juggler")
   +hamburger("shurikens-alt-r")
   ```
-  
+
 ## Sass
 
-Исходные файлы `.scss` доступны, если вы используете препроцессор Sass. Это дает вам гибкость и модульность.
+The `.scss` source files are available if you use the Sass preprocessor. This gives you flexibility and modularity.
 
-1. Скопируйте файлы из директории `sass` в ваш проект
-
-2. Импортируйте файл `hamburger.scss` внутри вашего файла:
+1. Import the `hamburger.scss` file inside your file:
 
   ```scss
   @import "path/to/hamburger";
   ```
-  
-3. Настройте свой гамбургер - удалите те типы в файле `hamburger.scss`, которые вы не планиуете использовать.
 
-## Кастомизация
+2. Configure your hamburger - override the `$hamburger-types` variable to remove those types that you do not plan to use from the compiled css file.
 
-Чтобы переопределить настройки по умолчанию, объявите их перед импортом гамбургеров:
+## Customization
+
+To override the default settings, declare them before importing hamburgers:
 
   ```scss
   $hamburger-layer-width: 30px;
   $hamburger-layer-height: 3px;
   $hamburger-layer-spacing: 5px;
-  
+  $hamburger-types: (
+  	storm
+  );
   @import "hamburger";
   ```
-  
-Вы также можете создать отдельный файл (например, `hamburger-settings.scss`) с этими настройками, а затем импортировать его перед гамбургерами:
+
+You can also create a separate file ( for example, `hamburger-settings.scss` ) with these settings, and then import it before the hamburgers:
 
   ```scss
   @import "hamburger-settings"
   @import "hamburger";
   ```
-  
-Вот полный список настроек по умолчанию (находится в `sass/hamburger.scss`):
+
+Here is the complete list of default settings ( found in `sass/hamburger.scss` ):
 
   ```scss
   $hamburger-layer-width        : 40px;
@@ -165,9 +158,9 @@ Magic burgers - это небольшая css-библиотека анимир�
   $hamburger-padding            : 10px;
   $hamburger-layer-border-radius: 4px;
   $hamburger-layer-color        : #000;
-  
-  // Удалите или закомментироуйте типы гамбургеров, которые вам не нужны
-  // чтобы они были исключены из скомпилированного CSS.
+
+  // override the `$hamburger-types` variable to remove those types
+  // that you do not plan to use from the compiled css file
   $hamburger-types: (
     simple,
     collapse,
@@ -188,8 +181,8 @@ Magic burgers - это небольшая css-библиотека анимир�
     alchemy-r
   );
   ```
-  
-## Поддержка браузерами
 
-Некоторые анимации используют CSSPerspective API, который не поддерживается в IE и Firefox.
-Для подробной информации воспользуйтесь [caniuse.com](https://caniuse.com/#search=perspective).
+## Browser support
+
+Some animations use the CSSPerspective API, which is not supported in IE and Firefox.
+For more information, use [caniuse.com](https://caniuse.com/#search=perspective).
