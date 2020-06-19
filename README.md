@@ -2,6 +2,10 @@
 
 Magic burgers is a small css library of animated hamburger menus inspired by [this](https://github.com/jonsuh/hamburgers) library. Also includes source sass files. Modular library and customizable, allowing you to cook your own burger!
 
+- The size of the minified css file with all effects - 27KB
+- The size of the source sass files - 16KB
+- The size of the minified css file with one effect - 3KB
+
 ![](https://i.imgur.com/583dcP1.gif)
 
 ## Usage
