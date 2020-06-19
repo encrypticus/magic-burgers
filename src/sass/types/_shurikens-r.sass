@@ -1,0 +1,42 @@
+@if index($hamburger-types, shurikens-r)
+  .hamburger--shurikens-r
+    .hamburger-inner
+      transition: .2s
+
+    .line-top
+      transition: .2s .2s
+
+    .line-bottom
+      transition: .2s .2s
+
+    .line-center-left
+      transition: left .2s, transform .2s, opacity .2s
+
+    .line-center-right
+      transition: right 0.2s 0.2s cubic-bezier(0.135, 1.65, 1, 1.65), transform 0.2s 0.2s, opacity 0.2s 0.2s
+
+    &.is-active
+      .hamburger-inner
+        transform: rotate(45deg)
+        transition: .2s .6s
+
+      .line-top
+        top: $center-position
+        transition: .2s .4s
+
+      .line-bottom
+        bottom: $center-position
+        transform: rotate(90deg)
+        transition: .2s .4s
+
+      .line-center-left
+        left: 100%
+        transform: rotate(360deg)
+        opacity: 0
+        transition: left 0.2s 0.2s cubic-bezier(0.135, 1.65, 1, 1.65), transform 0.2s 0.2s, opacity 0.2s 0.2s
+
+      .line-center-right
+        right: -50%
+        transform: rotate(360deg)
+        opacity: 0
+        transition: right 0.2s cubic-bezier(0.135, 1.65, 1, 1.65), transform 0.2s, opacity 0.2s
