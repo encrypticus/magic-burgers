@@ -122,7 +122,7 @@ Magic burgers is a small css library of animated hamburger menus inspired by [th
 
 ## Sass
 
-The `.scss` source files are available if you use the Sass preprocessor. This gives you flexibility and modularity.
+The `.scss` and `.sass` source files are available if you use the Sass preprocessor. This gives you flexibility and modularity.
 
 1. Import the `hamburger.scss` file inside your file:
 
